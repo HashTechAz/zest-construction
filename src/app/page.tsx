@@ -1,14 +1,23 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="min-h-dvh bg-[#19202F] flex flex-col items-center justify-center px-4">
-      <div className="text-center max-w-xl -mt-16">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F8F8F8] tracking-tight">
-          Coming Soon
-        </h1>
-        <p className="mt-6 text-base sm:text-lg text-[#BFBFBF] font-normal">
-          We&apos;re working hard to bring you something amazing. Stay tuned!
-        </p>
+    <main className="min-h-dvh bg-[#0c1018] flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative w-40 h-40 mb-6">
+        <Image 
+          src="/images/global/logo.png" 
+          alt="Zest Construction Logo"
+          fill
+          className="object-contain"
+          priority
+        />
       </div>
+      <h1 className="text-4xl md:text-5xl font-bold text-[#F8F8F8] tracking-tight">
+        Welcome to Zest development
+      </h1>
+      <p className="mt-4 text-lg md:text-xl text-[#BFBFBF] font-light italic">
+        Building Dreams, One Brick at a Time
+      </p>
     </main>
   );
 }
