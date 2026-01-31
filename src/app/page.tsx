@@ -13,7 +13,7 @@ export default function Home() {
         />
       </div>
       <h1 className="text-4xl md:text-5xl font-bold text-[#F8F8F8] tracking-tight">
-        Welcome to Zest development
+        Welcome to Zest development!
       </h1>
       <p className="mt-4 text-lg md:text-xl text-[#BFBFBF] font-light italic">
         Building Dreams, One Brick at a Time
