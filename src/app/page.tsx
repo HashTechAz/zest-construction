@@ -12,12 +12,15 @@ export default function Home() {
           priority
         />
       </div>
-      <h1 className="text-4xl md:text-5xl font-bold text-[#F8F8F8] tracking-tight">
-        Welcome to Zest development!
-      </h1>
-      <p className="mt-4 text-lg md:text-xl text-[#BFBFBF] font-light italic">
-        Building Dreams, One Brick at a Time
+      <p className=" tracking-tight mt-4 text-lg md:text-xl text-[#BFBFBF] font-light italic">
+        welcome to zest development!
       </p>
+      <h1 className="text-3xl md:text-3xl font-bold text-[#F8F8F8]">
+        This website is under development!
+      </h1>
+      <h1 className="mt-3 text-3xl md:text-3xl font-bold text-[#F8F8F8] tracking-tight">
+        COMING SOON...
+      </h1>
     </main>
   );
 }
