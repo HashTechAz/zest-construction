@@ -4,18 +4,24 @@ import { Container } from "@/components/ui/container";
 const contactData = [
   {
     icon: Phone,
-    title: "Call Support Center 24/7",
-    lines: ["+ 994 (55) 560 60 60", "+ 994 (55) 560 60 60"],
+    title: "Phone Number",
+    description: "Call us anytime for support",
+    info: "+994 50 324 60 38",
+    href: "tel:+994503246038",
   },
   {
     icon: Mail,
-    title: "Write To Us",
-    lines: ["support@gmail.com", "zest@gmail.com"],
+    title: "Email Address",
+    description: "Send us your inquiry",
+    info: "Info@zestdevelopment.az",
+    href: "mailto:Info@zestdevelopment.az",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    lines: ["Samad Vurgun street 9"],
+    title: "Office Location",
+    description: "Visit our main office",
+    info: "8th November str 4, Knightsbridge Residence, AZ1025, Baku",
+    href: "https://maps.google.com/?q=Knightsbridge+Residence+Baku", // Google maps linki (opsional)
   },
 ];
 
@@ -42,11 +48,9 @@ export function ContactCards() {
 
               {/* Mətni sətir-sətir yazırıq */}
               <div className="space-y-1">
-                {item.lines.map((line, i) => (
-                  <p key={i} className="text-slate-500 dark:text-slate-400 text-sm sm:text-base font-medium transition-colors">
-                    {line}
-                  </p>
-                ))}
+                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base font-medium transition-colors">
+                  {item.info}
+                </p>
               </div>
             </div>
           ))}

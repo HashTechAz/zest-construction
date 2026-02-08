@@ -22,12 +22,9 @@ export function Header() {
               <Image
                 src="/images/global/logo.png"
                 alt="Zest Logo"
-                width={48}
-                height={48}
+                fill
                 sizes="48px"
-                className="w-full h-full object-contain"
-                style={{ width: "auto", height: "auto" }}
-                priority
+                className="object-contain"
               />
             </Link>
 

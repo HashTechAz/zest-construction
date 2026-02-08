@@ -25,7 +25,7 @@ export function ContactInfo() {
           </div>
           <div className="min-w-0">
             <p className="text-xs sm:text-sm text-white/60">Phone Number</p>
-            <p className="text-base sm:text-lg font-semibold truncate">055 560 60 60</p>
+            <p className="text-base sm:text-lg font-semibold truncate">+994 50 324 60 38</p>
           </div>
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
@@ -34,7 +34,7 @@ export function ContactInfo() {
           </div>
           <div className="min-w-0">
             <p className="text-xs sm:text-sm text-white/60">Email Address</p>
-            <p className="text-base sm:text-lg font-semibold truncate">zest@gmail.com</p>
+            <p className="text-base sm:text-lg font-semibold truncate">Info@zestdevelopment.az</p>
           </div>
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
@@ -43,7 +43,7 @@ export function ContactInfo() {
           </div>
           <div className="min-w-0">
             <p className="text-xs sm:text-sm text-white/60">Location</p>
-            <p className="text-base sm:text-lg font-semibold">Samad Vurgun St., 9</p>
+            <p className="text-base sm:text-lg font-semibold">8th November str 4, Knightsbridge Residence, AZ1025, Baku</p>
           </div>
         </div>
       </div>

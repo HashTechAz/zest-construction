@@ -14,11 +14,9 @@ export function Footer() {
                 <Image
                   src="/images/global/logo.png"
                   alt="Zest Logo"
-                  width={56}
-                  height={64}
+                  fill
                   sizes="64px"
-                  className="w-full h-full object-contain"
-                  style={{ width: "auto", height: "auto" }}
+                  className="object-contain"
                 />
               </Link>
               <p className="text-white/70 leading-relaxed text-sm max-w-sm">
@@ -55,20 +53,28 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="md:col-span-1"> {/* Grid yerini tapanda rahat olsun deyə qeyd etdim */}
               <h3 className="text-[#E4B040] font-bold text-base sm:text-lg mb-4 sm:mb-6">Contact Us</h3>
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-start gap-3 text-white/80">
                   <Phone className="w-5 h-5 text-[#E4B040] shrink-0 mt-1" />
-                  <span>055 560 60 60</span>
+                  <a href="tel:+994503246038" className="hover:text-white transition-colors">
+                    +994 50 324 60 38
+                  </a>
                 </li>
                 <li className="flex items-start gap-3 text-white/80">
                   <Mail className="w-5 h-5 text-[#E4B040] shrink-0 mt-1" />
-                  <span>zest@gmail.com</span>
+                  <a href="mailto:Info@zestdevelopment.az" className="hover:text-white transition-colors break-all">
+                    Info@zestdevelopment.az
+                  </a>
                 </li>
                 <li className="flex items-start gap-3 text-white/80">
                   <MapPin className="w-5 h-5 text-[#E4B040] shrink-0 mt-1" />
-                  <span>Samad Vurgun St., 9</span>
+                  <span>
+                    8th November str 4, <br />
+                    Knightsbridge Residence, AZ1025 <br />
+                    Baku, Azerbaijan
+                  </span>
                 </li>
               </ul>
             </div>
