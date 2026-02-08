@@ -32,7 +32,7 @@ export function AboutStory() {
             
             <div className="space-y-3 sm:space-y-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed transition-colors">
               <p>
-                ZEST Development founded in 2024 and the dedicated to building excellence with precision, innovation, and integrity. With years of industry expertise, company deliver high-quality construction solutions that stand the test of time. Whether it’s residential, commercial, or industrial projects, company's skilled team ensures every detail is executed flawlessly.
+                ZEST Development founded in 2024 and the dedicated to building excellence with precision, innovation, and integrity. With years of industry expertise, company deliver high-quality construction solutions that stand the test of time. Whether it&apos;s residential, commercial, or industrial projects, company&apos;s skilled team ensures every detail is executed flawlessly.
                 ZEST Development creates timeless, high-quality structures that combine innovative design, sustainable practices, and unmatched craftsmanship, shaping spaces built to last.
                 ZEST Development prioritize safety, efficiency, and sustainability, transforming visions into reality with.
 

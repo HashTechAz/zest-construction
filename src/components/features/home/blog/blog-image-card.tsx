@@ -12,7 +12,6 @@ export interface BlogImageCardProps {
 export function BlogImageCard({ image, date, title, href }: BlogImageCardProps) {
   return (
     <div className="group relative w-full max-w-[410px] aspect-[3/4] md:aspect-auto md:h-[560px] rounded-2xl sm:rounded-[30px] overflow-hidden transition-all duration-300 hover:shadow-2xl cursor-pointer bg-muted">
-      {/* Next/Image fill üçün position:relative və ölçülü konteyner */}
       <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800">
         <div className="relative w-full h-full">
           <Image

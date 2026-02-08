@@ -15,7 +15,7 @@ export function ContactInfo() {
           Contact Information
         </h2>
         <p className="text-white/70 mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed">
-          Have a project in mind? We would love to hear from you. Let's build something amazing together.
+          Have a project in mind? We would love to hear from you. Let&apos;s build something amazing together.
         </p>
       </div>
       <div className="relative z-10 space-y-5 sm:space-y-8">

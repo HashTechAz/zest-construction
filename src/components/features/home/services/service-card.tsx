@@ -17,7 +17,6 @@ export function ServiceCard({ title, description, image, href }: ServiceCardProp
 
   return (
     <div className="group relative w-full max-w-[410px] min-h-[280px] h-[280px] sm:h-[320px] md:h-[380px] overflow-hidden rounded-2xl sm:rounded-[30px] cursor-pointer bg-muted">
-      {/* Şəkil konteyneri - Next/Image fill üçün position:relative və ölçü lazımdır */}
       <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800">
         {!imgError ? (
           <div className="relative w-full h-full">

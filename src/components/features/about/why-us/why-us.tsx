@@ -24,16 +24,13 @@ const features = [
 export function WhyUs() {
   return (
     <section className="py-20 bg-slate-50 dark:bg-[#0B1525] relative overflow-hidden">
-      {/* Arxa fon bəzəyi (opsional) */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E4B040]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          {/* Sol Tərəf: Başlıq və Əsas Mətn */}
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-[#11223B] dark:text-white mb-6 leading-tight">
-              Why We're <br />
+              Why We&apos;re <br />
               <span className="text-[#E4B040]">Your Best Choice</span>
             </h2>
             <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8">
@@ -42,12 +39,8 @@ export function WhyUs() {
             <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
               With a focus on craftsmanship, safety, and long-term value, we build lasting relationships and spaces that strengthen communities.
             </p>
-            
-            {/* Dekorativ xətt */}
             <div className="mt-8 h-1.5 w-24 bg-[#E4B040] rounded-full" />
           </div>
-
-          {/* Sağ Tərəf: 3 Feature Kartı */}
           <div className="flex flex-col gap-6 relative z-10">
             {features.map((feature, index) => {
               const Icon = feature.icon;

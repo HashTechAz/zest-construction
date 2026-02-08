@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/constants/nav-data";
 import { X } from "lucide-react";
@@ -16,6 +16,7 @@ interface MobileSidebarProps {
 
 export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
   const pathname = usePathname();
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
     if (open) {
@@ -29,12 +30,14 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
   }, [open]);
 
   useEffect(() => {
-    if (open) onClose();
-  }, [pathname]); // close on route change
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      if (open) onClose();
+    }
+  }, [pathname, open, onClose]);
 
   return (
     <>
-      {/* Overlay */}
       <div
         className={cn(
           "fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-opacity duration-300 md:hidden",
@@ -43,8 +46,6 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
         onClick={onClose}
         aria-hidden="true"
       />
-
-      {/* Sidebar - soldan sürüşür */}
       <aside
         className={cn(
           "fixed top-0 left-0 h-full w-[min(320px,85vw)] max-w-[320px] z-[70]",

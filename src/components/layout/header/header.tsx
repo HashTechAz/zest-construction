@@ -27,17 +27,12 @@ export function Header() {
                 className="object-contain"
               />
             </Link>
-
-            {/* Desktop nav */}
             <NavMenu />
-
-            {/* Right: theme + CTA on desktop, hamburger on mobile */}
             <div className="flex items-center gap-2 sm:gap-4">
               <ThemeToggle />
               <Button className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white shadow-lg shadow-orange-500/20">
                 Contact Us
               </Button>
-              {/* Hamburger - yalnız mobil */}
               <button
                 type="button"
                 onClick={() => setSidebarOpen(true)}

@@ -13,7 +13,7 @@ const values = [
     description: "To be one of the leading innovative engineering & construction companies. Our vision based on integrity, innovative acumen and stewardshi.",
   },
   {
-    icon: Handshake, // "Values" üçün əl sıxma ikonu
+    icon: Handshake,
     title: "Our Values",
     description: "Our values based on sustainability, commitment and transparency. We believe that sustainability, commitment and transparency make our world better place to live.",
   },
@@ -21,7 +21,6 @@ const values = [
 
 export function AboutValues() {
   return (
-    // Light: bg-white | Dark: bg-background (#1E1E1E)
     <section className="w-full py-12 sm:py-16 md:py-20 bg-white dark:bg-background transition-colors duration-300">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">

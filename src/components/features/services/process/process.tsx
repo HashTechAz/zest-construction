@@ -32,8 +32,6 @@ export function ServiceProcess() {
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 bg-white dark:bg-[#0c0f12] transition-colors duration-300 overflow-hidden">
       <Container>
-        
-        {/* Başlıq */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-2 sm:space-y-3 px-2">
           <h4 className="text-red-700 font-bold uppercase tracking-widest text-xs sm:text-sm">
             How We Work
@@ -53,8 +51,6 @@ export function ServiceProcess() {
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white dark:bg-[#1E1E1E] border-4 border-[#F8F9FA] dark:border-white/5 rounded-full flex items-center justify-center mb-4 sm:mb-6 shadow-lg transition-all duration-500 group-hover:border-[#E4B040] group-hover:scale-110">
                 <step.icon className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-slate-400 dark:text-slate-500 transition-colors duration-300 group-hover:text-[#E4B040]" />
               </div>
-
-              {/* Nömrə (Arxa fonda solğun) */}
               <div className="absolute top-0 right-10 lg:right-4 -z-10 text-6xl font-black text-slate-100 dark:text-white/5 opacity-0 lg:opacity-100 transition-all duration-300 group-hover:-translate-y-2 group-hover:text-[#E4B040]/10">
                 {step.number}
               </div>

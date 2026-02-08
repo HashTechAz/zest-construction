@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button/button";
 import { ContactInfo } from "./contact-info";
 
 interface ContactSectionProps {
-  /** Contact səhifəsində daha az boşluq üçün */
   compact?: boolean;
 }
 

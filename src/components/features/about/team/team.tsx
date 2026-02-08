@@ -43,8 +43,6 @@ export function AboutTeam() {
               key={index} 
               className="group relative h-[320px] sm:h-[380px] md:h-[450px] w-full rounded-2xl sm:rounded-[30px] overflow-hidden cursor-pointer [mask-image:radial-gradient(white,black)]"
             >
-              
-              {/* 1. ARXA FON ŞƏKİLİ */}
               <div
                 className="absolute inset-0 bg-slate-200 dark:bg-[#161B22] [contain:paint]"
                 style={{ clipPath: "inset(0 round 30px)" }}
@@ -57,16 +55,11 @@ export function AboutTeam() {
                   className="object-cover rounded-[30px] transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-
-              {/* 2. GRADIENT OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80 pointer-events-none" />
-
-              {/* 3. SOCIAL MEDIA */}
               <div className="absolute top-6 right-6 flex flex-col gap-3 translate-x-[200%] transition-transform duration-500 group-hover:translate-x-0">
                 {[Linkedin, Twitter, Mail].map((Icon, i) => (
                     <button 
                       key={i}
-                      // DÜZƏLİŞ 2: bg-white/10 -> bg-black/40 (Daha tünd və oxunaqlı)
                       className="w-10 h-10 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#E4B040] hover:border-[#E4B040] hover:text-white transition-all duration-300 shadow-lg"
                       style={{ transitionDelay: `${i * 100}ms` }} 
                     >
@@ -74,8 +67,6 @@ export function AboutTeam() {
                     </button>
                 ))}
               </div>
-
-              {/* 4. MƏLUMAT QUTUSU */}
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-300 group-hover:bg-[#E4B040] group-hover:border-[#E4B040]">
                   <h3 className="text-base sm:text-xl font-bold text-white mb-0.5 sm:mb-1">
@@ -84,8 +75,6 @@ export function AboutTeam() {
                   <p className="text-white/70 text-xs sm:text-sm font-medium uppercase tracking-wide group-hover:text-white/90">
                     {member.role}
                   </p>
-                  
-                  {/* Dekorativ ikon */}
                   <div className="absolute top-1/2 -translate-y-1/2 right-4 w-8 h-8 rounded-full border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <Plus className="w-4 h-4 text-white" />
                   </div>

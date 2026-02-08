@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
-import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle, ArrowRight, Hash } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -53,7 +53,7 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="md:col-span-1"> {/* Grid yerini tapanda rahat olsun deyə qeyd etdim */}
+            <div className="md:col-span-1">
               <h3 className="text-[#E4B040] font-bold text-base sm:text-lg mb-4 sm:mb-6">Contact Us</h3>
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-start gap-3 text-white/80">

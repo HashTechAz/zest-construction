@@ -45,7 +45,6 @@ export function ProjectList() {
               key={index}
               className="group w-full max-w-[440px] mx-auto md:mx-0 rounded-2xl sm:rounded-3xl overflow-hidden bg-white dark:bg-[#161B22] border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Şəkil – yalnız yuxarı hissə, overlay yox */}
               <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-800">
                 <Image
                   src={item.image}
@@ -58,8 +57,6 @@ export function ProjectList() {
                   {item.category}
                 </span>
               </div>
-
-              {/* Məzmun – ayrıca qutu, servis kartından fərqli */}
               <div className="p-5 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-[#1E1E1E] dark:text-white mb-2 group-hover:text-primary transition-colors">
                   {item.title}
