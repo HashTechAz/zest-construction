@@ -20,7 +20,7 @@ export function Footer() {
                 />
               </Link>
               <p className="text-white/70 leading-relaxed text-sm max-w-sm">
-                Lorem ipsum dolor sit amet consectetur. Ac ut bibendum a suscipit. At molestie non pretium dictum felis arcu.
+                Lorem ipsum dolor sit amet consectetur. Ac ut bibendum a suscipit.
               </p>
             </div>
             <div>
