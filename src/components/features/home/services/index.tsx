@@ -1,27 +1,11 @@
-import Image from "next/image";
-import { Container } from "@/components/ui/container";
-import { ServiceCard } from "./service-card";
+"use client";
 
-const services = [
-  {
-    title: "Building Construction",
-    description: "Expert building construction services ensuring durability, safety, and modern aesthetics. We bring your vision to life with precision.",
-    image: "/images/services/service-1.jpg",
-    href: "/services/building-construction",
-  },
-  {
-    title: "Architecture Design",
-    description: "Innovative architectural designs that blend functionality with artistic vision. Creating spaces that inspire and endure.",
-    image: "/images/services/service-2.jpg",
-    href: "/services/architecture-design",
-  },
-  {
-    title: "Building Renovation",
-    description: "Transform your existing space with our renovation experts. We upgrade structures to meet modern standards and comfort.",
-    image: "/images/services/service-1.jpg",
-    href: "/services/building-renovation",
-  },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { allServicesList, ServiceIconCard } from "@/components/features/services/all-services/all-services";
+
+const homeServices = allServicesList.slice(0, 3);
 
 export function ServicesSection() {
   return (
@@ -52,13 +36,19 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-          {services.map((service, index) => (
-            <ServiceCard 
-              key={index}
-              {...service}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {homeServices.map((service) => (
+            <ServiceIconCard key={service.id} service={service} />
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link 
+            href="/services" 
+            className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/20 transition-colors"
+          >
+            View All Services
+          </Link>
         </div>
       </Container>
     </section>
