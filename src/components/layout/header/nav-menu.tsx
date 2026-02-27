@@ -24,9 +24,6 @@ export function NavMenu() {
             )}
           >
             {link.name}
-            {link.hasDropdown && (
-              <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform" />
-            )}
           </Link>
         );
       })}

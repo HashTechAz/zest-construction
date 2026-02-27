@@ -18,16 +18,19 @@ export function Header() {
       <header className="absolute top-4 sm:top-6 md:top-10 left-0 right-0 z-50">
         <Container>
           <div className="mx-3 sm:mx-4 md:mx-12 relative flex items-center justify-between rounded-full bg-[#0B1A2E]/60 backdrop-blur-md border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl transition-all duration-300 hover:bg-[#0B1A2E]/70">
-            <Link href="/" className="relative block w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 shrink-0">
+            {/* LOQONUN ÖLÇÜLƏRİ BURADA BÖYÜDÜLDÜ (w-14 h-14 md:w-24 md:h-24) */}
+            <Link href="/" className="relative block w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 shrink-0">
               <Image
                 src="/images/global/logo.png"
                 alt="Zest Logo"
                 fill
-                sizes="48px"
+                sizes="96px"
                 className="object-contain"
               />
             </Link>
+            
             <NavMenu />
+            
             <div className="flex items-center gap-2 sm:gap-4">
               <ThemeToggle />
               <Button className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white shadow-lg shadow-orange-500/20">
