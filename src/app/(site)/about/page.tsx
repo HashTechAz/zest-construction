@@ -24,13 +24,6 @@ const AboutValues = dynamic(
   }
 );
 
-const AboutTeam = dynamic(
-  () => import("@/components/features/about/team/team").then((mod) => mod.AboutTeam),
-  {
-    loading: () => <SuspenseFallback className="w-full h-[400px] rounded-[30px]" />,
-  }
-);
-
 const WhyUs = dynamic(
   () => import("@/components/features/about/why-us/why-us").then((mod) => mod.WhyUs),
   {
@@ -46,7 +39,6 @@ export default function AboutPage() {
       <AboutStory />
       <AboutValues />
       <WhyUs />
-      <AboutTeam />
       <Footer />
     </main>
   );

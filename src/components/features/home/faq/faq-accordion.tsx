@@ -34,11 +34,8 @@ export function FaqAccordion() {
     <div className="w-full space-y-4">
       
       <div className="mb-6 sm:mb-8 space-y-2">
-        <h4 className="text-red-700 font-bold uppercase tracking-widest text-xs sm:text-sm">
-          Common Questions
-        </h4>
         <h2 className="text-foreground text-2xl sm:text-3xl md:text-4xl font-bold">
-          Frequently Asked Questions
+          FAQ
         </h2>
       </div>
 

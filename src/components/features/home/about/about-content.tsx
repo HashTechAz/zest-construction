@@ -1,5 +1,11 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button/button";
+
+const scrollToServices = () => {
+  document.getElementById("our-services")?.scrollIntoView({ behavior: "smooth" });
+};
 
 export function AboutContent() {
   return (
@@ -14,8 +20,11 @@ export function AboutContent() {
 
       </p>
       <div className="pt-2 flex justify-center lg:justify-start">
-        <Button className="h-12 px-8 text-base gap-2 shadow-xl shadow-orange-500/20">
-          Get started <ArrowUpRight className="w-4 h-4" />
+        <Button
+          onClick={scrollToServices}
+          className="h-12 px-8 text-base gap-2 shadow-xl shadow-orange-500/20"
+        >
+          Learn more <ArrowUpRight className="w-4 h-4" />
         </Button>
       </div>
 

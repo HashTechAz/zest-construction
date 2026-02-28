@@ -13,7 +13,7 @@ export function ContactSection({ compact }: ContactSectionProps = {}) {
     >
       <Container>
         <div className="flex flex-col lg:flex-row items-stretch gap-8 sm:gap-12 lg:gap-20">
-          <div className="w-full lg:w-[520px] shrink-0">
+          <div className="w-full lg:w-[440px] shrink-0">
              <ContactInfo />
           </div>
           <div className="w-full flex-1 h-full flex flex-col justify-center dark:bg-[#161B22] dark:p-5 sm:p-8 md:p-10 dark:rounded-2xl sm:dark:rounded-[30px] transition-all duration-300">

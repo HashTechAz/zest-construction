@@ -13,6 +13,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Zest Development",
   description: "Zest Development website",
+  icons: {
+    icon: "/images/global/logo.png",
+    apple: "/images/global/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -22,13 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`min-h-dvh bg-background text-foreground antialiased ${poppins.className}`}>
+      <body className={`min-h-dvh bg-background text-foreground antialiased ${poppins.className}`} suppressHydrationWarning>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
+          > 
             <Preloader />
             {children}
           </ThemeProvider>

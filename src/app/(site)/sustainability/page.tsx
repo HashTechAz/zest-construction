@@ -10,11 +10,9 @@ export default function SustainabilityPage() {
   return (
     <main className="relative bg-background transition-colors duration-300">
       <Header />
-      {/* Səhifənin məzmunu (Header-in altında qalmaması üçün padding verilib) */}
       <div className="pt-32 pb-20 min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6">
            <h1 className="text-3xl font-bold mt-10">Sustainability</h1>
-           {/* Gələcəkdə bura məzmun əlavə ediləcək */}
         </div>
       </div>
       <Footer />

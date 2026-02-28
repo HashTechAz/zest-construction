@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function FaqImage() {
   return (
-    <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[750px] rounded-2xl overflow-hidden">
+    <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] rounded-2xl overflow-hidden">
       <Image
         src="/images/home/faq-illustration.png" 
         alt="Construction FAQ"

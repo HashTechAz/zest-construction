@@ -8,52 +8,39 @@ export function Footer() {
     <footer className="w-full pb-6 pt-10">
       <Container>
         <div className="bg-[#0b1525] rounded-2xl sm:rounded-[30px] overflow-hidden text-white px-5 sm:px-6 md:px-8 py-10 sm:py-12 md:p-16 relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16">
-            <div className="space-y-4 sm:space-y-6">
-              <Link href="/" className="relative block w-12 h-14 sm:w-14 sm:h-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16">
+            <div className="space-y-4 sm:space-y-5">
+              <Link href="/" className="relative block w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32">
                 <Image
                   src="/images/global/logo.png"
                   alt="Zest Logo"
                   fill
-                  sizes="64px"
+                  sizes="112px"
                   className="object-contain"
                 />
               </Link>
-              <p className="text-white/70 leading-relaxed text-sm max-w-sm">
-                Lorem ipsum dolor sit amet consectetur. Ac ut bibendum a suscipit.
-              </p>
             </div>
-            <div>
-              <h3 className="text-[#E4B040] font-bold text-base sm:text-lg mb-4 sm:mb-6">Our Services</h3>
-              <ul className="space-y-3 sm:space-y-4">
-                {["Building Construction", "Architecture Design", "Building Maintenance", "Flooring & Roofing", "Building Renovation"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="group flex items-center gap-2 text-white/80 hover:text-[#E4B040] transition-colors">
-                      <span className="w-5 h-5 rounded-full border border-[#E4B040]/30 flex items-center justify-center group-hover:bg-[#E4B040] group-hover:border-[#E4B040] transition-all">
-                        <ArrowRight className="w-3 h-3 text-[#E4B040] group-hover:text-[#11223B]" />
-                      </span>
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
+            <div className="sm:col-span-1">
               <h3 className="text-[#E4B040] font-bold text-base sm:text-lg mb-4 sm:mb-6">Company</h3>
-              <ul className="space-y-3 sm:space-y-4">
-                {["About Us", "Services", "Blog", "FAQ"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="group flex items-center gap-2 text-white/80 hover:text-[#E4B040] transition-colors">
-                      <span className="w-5 h-5 rounded-full border border-[#E4B040]/30 flex items-center justify-center group-hover:bg-[#E4B040] group-hover:border-[#E4B040] transition-all">
-                        <ArrowRight className="w-3 h-3 text-[#E4B040] group-hover:text-[#11223B]" />
-                      </span>
-                      {item}
-                    </Link>
-                  </li>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3 sm:gap-y-4">
+                {[
+                  { label: "History", href: "/about" },
+                  { label: "Projects", href: "/projects" },
+                  { label: "Partners", href: "/about" },
+                  { label: "News", href: "/news" },
+                  { label: "Careers", href: "/contact" },
+                  { label: "FAQ", href: "/#faq" },
+                ].map((item) => (
+                  <Link key={item.label} href={item.href} className="group flex items-center gap-2 text-white/80 hover:text-[#E4B040] transition-colors">
+                    <span className="w-5 h-5 rounded-full border border-[#E4B040]/30 flex items-center justify-center group-hover:bg-[#E4B040] group-hover:border-[#E4B040] transition-all shrink-0">
+                      <ArrowRight className="w-3 h-3 text-[#E4B040] group-hover:text-[#11223B]" />
+                    </span>
+                    {item.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
-            <div className="md:col-span-1">
+            <div className="sm:col-span-1">
               <h3 className="text-[#E4B040] font-bold text-base sm:text-lg mb-4 sm:mb-6">Contact Us</h3>
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-start gap-3 text-white/80">

@@ -11,7 +11,6 @@ export default function Loading() {
               <div className="h-6 w-3/4 bg-slate-100 dark:bg-[#161B22] rounded-lg animate-pulse" />
            </div>
         </div>
-
       </div>
     </div>
   );

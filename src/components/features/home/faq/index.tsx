@@ -4,7 +4,7 @@ import { FaqAccordion } from "./faq-accordion";
 
 export function FaqSection() {
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-28 bg-background overflow-hidden">
+    <section id="faq" className="w-full py-12 sm:py-16 lg:py-28 bg-background overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
           

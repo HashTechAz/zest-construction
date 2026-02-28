@@ -51,15 +51,12 @@ export function BlogSection() {
   return (
     <section className="w-full py-12 sm:py-16 lg:py-28 bg-background">
       <Container>
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-2 sm:space-y-3">
-          <h4 className="text-red-700 font-bold uppercase tracking-widest text-xs sm:text-sm">
-            Latest News
-          </h4>
-          <h2 className="text-foreground text-2xl sm:text-3xl md:text-5xl font-bold px-2">
-            Insights & Updates
+        <div className="text-center mb-6 sm:mb-10 md:mb-12 space-y-2">
+          <h2 className="text-foreground text-2xl sm:text-3xl md:text-4xl font-bold px-2">
+            NEWS
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 justify-items-stretch">
           {blogPosts.map((post, index) => (
             post.type === "text" ? (
               // @ts-expect-error (Sadəlik üçün)
