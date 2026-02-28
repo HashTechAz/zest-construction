@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 export function ServicesHero() {
   return (
     <Container className="relative z-0 mt-6 sm:mt-8 md:mt-10 px-3 sm:px-4">
-      <div className="relative w-full min-h-[380px] sm:min-h-[400px] md:h-[450px] rounded-2xl sm:rounded-[30px] overflow-hidden flex items-center justify-center">
+      <div className="relative w-full min-h-[520px] sm:min-h-[580px] md:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0 bg-[#0B1A2E]">
           <div className="relative w-full h-full">
             <Image
