@@ -5,12 +5,14 @@ export interface Project {
   location: string;
   image: string;
   description: string;
+  descriptionExtra?: string;
   year: string;
   area: string;
   client: string;
   duration: string;
   gallery: string[];
   highlights: string[];
+  scope?: string[];
 }
 
 export const projects: Project[] = [
@@ -37,6 +39,9 @@ export const projects: Project[] = [
       "Underground parking and smart building systems",
       "Landscaped plaza and public areas",
     ],
+    descriptionExtra:
+      "The project required close coordination between design, engineering, and construction teams. We managed all trades on site and ensured timely delivery of MEP, facade, and interior packages. Quality control and safety were prioritised throughout.",
+    scope: ["Full turnkey construction", "Facade & MEP systems", "Interior common areas", "Landscaping & external works"],
   },
   {
     slug: "skyline-residence",
@@ -61,6 +66,9 @@ export const projects: Project[] = [
       "Rooftop terrace and fitness center",
       "24/7 security and smart access",
     ],
+    descriptionExtra:
+      "From foundation works to finishing, our team delivered the full construction scope. The building was handed over on schedule with all certifications and snagging completed.",
+    scope: ["Structure & foundation", "Facade & glazing", "MEP & smart systems", "Common areas & amenities"],
   },
   {
     slug: "eco-green-villa",
@@ -85,6 +93,9 @@ export const projects: Project[] = [
       "Landscaped garden and outdoor living",
       "Rainwater harvesting and greywater reuse",
     ],
+    descriptionExtra:
+      "We worked with the client and architects from an early stage to integrate sustainable systems and local materials. The result is a comfortable, low-energy home that fits its setting.",
+    scope: ["Architecture coordination", "Structure & envelope", "Solar & rainwater systems", "Landscaping & interiors"],
   },
 ];
 
@@ -94,4 +105,8 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export function getAllProjectSlugs(): string[] {
   return projects.map((p) => p.slug);
+}
+
+export function getRelatedProjects(currentSlug: string, limit = 2): Project[] {
+  return projects.filter((p) => p.slug !== currentSlug).slice(0, limit);
 }

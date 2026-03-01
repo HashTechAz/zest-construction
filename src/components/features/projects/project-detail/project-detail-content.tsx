@@ -1,8 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
-import { MapPin, Calendar, Ruler, User, Clock, CheckCircle2, ArrowLeft } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  Ruler,
+  User,
+  Clock,
+  CheckCircle2,
+  ArrowLeft,
+  ArrowUpRight,
+  Layers,
+} from "lucide-react";
 import type { Project } from "@/data/projects";
+import { getRelatedProjects } from "@/data/projects";
 
 interface ProjectDetailContentProps {
   project: Project;
@@ -16,8 +27,36 @@ const specItems = [
 ];
 
 export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
+  const related = getRelatedProjects(project.slug, 2);
+  const scope = project.scope ?? [];
+
   return (
     <>
+      {/* Stats strip */}
+      <section className="w-full py-8 sm:py-10 transition-colors duration-300">
+        <Container>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">{project.year}</p>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase tracking-wider mt-1">Year</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E1E1E] dark:text-white">{project.area}</p>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase tracking-wider mt-1">Area</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E1E1E] dark:text-white">{project.duration}</p>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase tracking-wider mt-1">Duration</p>
+            </div>
+            <div className="text-center sm:text-left col-span-2 lg:col-span-1">
+              <p className="text-lg sm:text-xl font-bold text-[#1E1E1E] dark:text-white truncate" title={project.client}>{project.client}</p>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase tracking-wider mt-1">Client</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Overview + Key details */}
       <section className="w-full py-12 sm:py-16 lg:py-20 bg-background transition-colors duration-300">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -28,7 +67,12 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
               <p className="text-[#1E1E1E] dark:text-white text-base sm:text-lg leading-relaxed">
                 {project.description}
               </p>
-              <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+              {project.descriptionExtra && (
+                <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+                  {project.descriptionExtra}
+                </p>
+              )}
+              <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm pt-2">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 {project.location}
               </div>
@@ -51,10 +95,33 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
         </Container>
       </section>
 
-      {project.highlights.length > 0 && (
+      {/* Scope */}
+      {scope.length > 0 && (
         <section className="w-full py-12 sm:py-16 bg-[#F8F9FA] dark:bg-[#0B1525] transition-colors duration-300">
           <Container>
-            <h2 className="text-[#1E1E1E] dark:text-white text-2xl sm:text-3xl font-bold mb-8">
+            <h2 className="text-[#1E1E1E] dark:text-white text-xl sm:text-2xl font-bold mb-6 flex items-center gap-2">
+              <Layers className="w-6 h-6 text-primary" />
+              What we delivered
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {scope.map((item, i) => (
+                <span
+                  key={i}
+                  className="px-4 py-2 rounded-full bg-white dark:bg-[#161B22] border border-slate-200 dark:border-white/10 text-sm font-medium text-[#1E1E1E] dark:text-white"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Highlights */}
+      {project.highlights.length > 0 && (
+        <section className="w-full py-12 sm:py-16 bg-background transition-colors duration-300">
+          <Container>
+            <h2 className="text-[#1E1E1E] dark:text-white text-xl sm:text-2xl font-bold mb-8">
               Project highlights
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -69,23 +136,26 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
         </section>
       )}
 
+      {/* Gallery */}
       {project.gallery.length > 0 && (
-        <section className="w-full py-12 sm:py-16 lg:py-20 bg-background transition-colors duration-300">
+        <section className="w-full py-12 sm:py-16 lg:py-20 bg-[#F8F9FA] dark:bg-[#0B1525] transition-colors duration-300">
           <Container>
-            <h2 className="text-[#1E1E1E] dark:text-white text-2xl sm:text-3xl font-bold mb-8">
+            <h2 className="text-[#1E1E1E] dark:text-white text-xl sm:text-2xl font-bold mb-8">
               Gallery
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {project.gallery.map((src, i) => (
                 <div
                   key={i}
-                  className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800"
+                  className={`relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 ${
+                    i === 0 ? "sm:col-span-2 sm:row-span-2 aspect-[4/3] sm:aspect-auto sm:min-h-[320px]" : "aspect-[4/3]"
+                  }`}
                 >
                   <Image
                     src={src}
                     alt={`${project.title} - ${i + 1}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes={i === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
                     className="object-cover"
                   />
                 </div>
@@ -95,6 +165,49 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
         </section>
       )}
 
+      {/* Related projects */}
+      {related.length > 0 && (
+        <section className="w-full py-12 sm:py-16 lg:py-20 bg-background transition-colors duration-300">
+          <Container>
+            <h2 className="text-[#1E1E1E] dark:text-white text-xl sm:text-2xl font-bold mb-8">
+              Other projects
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {related.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/projects/${p.slug}`}
+                  className="group block rounded-2xl overflow-hidden bg-[#F8F9FA] dark:bg-[#161B22] border border-slate-200 dark:border-white/10 hover:border-primary/30 dark:hover:border-primary/30 transition-all hover:shadow-xl"
+                >
+                  <div className="relative aspect-[16/10] sm:aspect-video overflow-hidden">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-primary text-white text-xs font-bold uppercase">
+                      {p.category}
+                    </span>
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-lg font-bold text-[#1E1E1E] dark:text-white group-hover:text-primary transition-colors mb-1">
+                      {p.title}
+                    </h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1">
+                      {p.location}
+                      <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* CTA */}
       <section className="w-full py-12 sm:py-16 bg-[#F8F9FA] dark:bg-[#0B1525] transition-colors duration-300">
         <Container>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl sm:rounded-[30px] border border-slate-200 dark:border-white/10 bg-white dark:bg-[#161B22] p-6 sm:p-8 md:p-10">
